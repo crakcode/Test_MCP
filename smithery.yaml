@@ -11,6 +11,15 @@ build:
   type: "docker"
   dockerfile: "./Dockerfile"
   dockerBuildPath: "." # Docker 빌드 컨텍스트 경로 (현재 디렉토리)
+startCommand:
+  type: "http"
+  configSchema:                      # JSON Schema for configuration
+    type: "object"
+    properties:
+      apiKey:
+        type: "string"
+        description: "5db7d20b-d503-49ff-9746-2da4131a5940"
+    required: ["apiKey"]
 
 # 런타임 설정: MCP 서버이며, 통신 방식은 stdio입니다.
 runtime:
